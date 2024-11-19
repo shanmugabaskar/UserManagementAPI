@@ -77,7 +77,8 @@ namespace UserManagementAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(string id, [FromBody] UpdateUserModel model)
         {
-            var user = await _userManager.FindByIdAsync(id); if (user == null)
+            var user = await _userManager.FindByIdAsync(id); 
+            if (user == null)
             {
                 return NotFound();
             }
